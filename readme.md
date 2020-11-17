@@ -1,11 +1,9 @@
-ALsafe
+# ALsafe
 
-Steps to initialize database
+We strive to protect your digital footprint and provide only one alsafe identity for a person. 
 
-python3 -m venv auth
-source auth/bin/activate
+We implemented the project using Flask web development framework, using Firebase as an unstructured cloud database. Our application ensures only unique identity users to enter the application, I achieved this using Siamese Neural Network. 
+
+Below are the Screenshots of application's beta prototype at link (https://alsafe.pythonanywhere.com)
 
 
-export FLASK_APP=project
-export FLASK_DEBUG=1
-flask run
