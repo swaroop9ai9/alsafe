@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Al Safe</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'main.css') }}">
+</head>
+<body>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"> Forgot Password? </h2>
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="{{ url_for('static', filename = 'user.png') }}" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form method="POST" action="/resetpass">
+      <input type="text" id="login" class="fadeIn second" name="uid" placeholder="Enter User Id">
+
+			<input type="submit" class="fadeIn fourth" value="Reset Password">
+    </form>
+
+
+  </div>
+</div>
+</body>
+</html>

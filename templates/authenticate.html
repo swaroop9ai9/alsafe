@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Authenticate</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'welcome.css')}}">
+    <script src="{{url_for('static', filename='twitter.js')}}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!--<script src="https://cdn.rawgit.com/oauth-io/oauth-js/c5af4519/dist/oauth.js"></script>-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.12.0/bootstrap-social.min.css">
+    </head>
+<body>
+
+
+    <script>
+
+    window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '351741945958670',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v8.0'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+  function facebookLogin() {
+    var FB = window.FB;
+    var scopes = 'email,user_likes,public_profile';
+
+    FB.login(function(response) {
+      if (response.status === 'connected') {
+          console.log(response);
+          var xmlhttp = new XMLHttpRequest();
+          xmlhttp.open("POST", "/fbcheck");
+          xmlhttp.onreadystatechange = function() {
+          if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            alert('Facebook says your name is:' + response.name);
+            alert(xmlhttp.responseText);
+            window.location = "welcome"
+            }
+        }
+        xmlhttp.send("Yes");
+        console.log('The user has logged in!');
+        FB.api('/me', function(response) {
+          console.log('Good to see you, ' + response.name + '.');
+        });
+      }
+    }, { scope: scopes });
+  }
+
+    function twitterLogin(){
+        // Initialize with your OAuth.io app public key
+        OAuth.initialize('xamlUIX7QWacUsH1Zgp3jn9uQqI');
+        // Use popup for OAuth
+        OAuth.popup('twitter').then(twitter => {
+        console.log('twitter:', twitter);
+        // Prompts 'welcome' message with User's email on successful login
+        // #me() is a convenient method to retrieve user data without requiring you
+        // to know which OAuth provider url to call
+        twitter.me().then(data => {
+        console.log('data:', data);
+        alert('Twitter says your name is:' + data.name);
+
+        });
+        // Retrieves user data from OAuth provider by using #get() and
+        // OAuth provider url
+        twitter.get('/1.1/account/verify_credentials.json?include_email=true').then(data => {
+        console.log('self data:', data);
+        var xmlhttp = new XMLHttpRequest();
+          xmlhttp.open("POST", "/tweetcheck");
+          xmlhttp.onreadystatechange = function() {
+          if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            alert(xmlhttp.responseText);
+            window.location = "welcome"
+            }
+        }
+        xmlhttp.send("Yes");
+        console.log('The user has logged in!');
+
+    })
+  });
+    }
+
+</script>
+    <header>
+      <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url_for('welcome') }}">Al Safe</a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <form id="signoutform" method="post" action="/signout"></form>
+              <li><a onclick="document.getElementById('signoutform').submit();">Sign Out</a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+            </ul>
+          </div>
+
+        </div><!-- /.container-fluid -->
+      </nav>
+      </header>
+      <div class="main">
+        <h1 class="name">Hi, {{name}}</h1><hr style="width: 30%">
+        <h3 class="email">{{email}}</h3>
+        <div class="selectlink">
+          <button onclick="facebookLogin()">Facebook</button>
+          <button onclick = "twitterLogin()">Twitter</button>
+          </div>
+          </div>
+    </body>
+    </html>

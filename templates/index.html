@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI SAFE | Stay Alive</title>
+    <link   href="https://fonts.google.googleapis.com/css?family=Quicksand:300,400,500,700" ref= "stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css') }}">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="nav">
+        <div class="left">
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="right">
+          <ul>
+            <li><a href="{{ url_for('login') }}">Log In</a></li>
+            <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="header">
+        <h1>Alsafe</h1>
+        <p>Stay Digitally Alive</p>
+
+      </div>
+
+    </div>
+  </body>
+</html>
+<!--
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI SAFE | Stay Alive</title>
+    <link href ="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet"  href="{{ url_for('static', filename = 'animate.css') }}">
+    <link rel="stylesheet"  href="{{ url_for('static', filename = 'newstyle.css') }}">
+
+
+  </head>
+
+  <body>
+
+    <header>
+      <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Al Safe</a>
+          </div>
+
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="{{ url_for('index') }}">Home </a> </li>
+              <li><a href="#">About</a></li>
+              <li><a href="{{ url_for('login') }}">Log In</a></li>
+              <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <div class="banner" style= "background-image: url(static/3.jpg);"></div>
+            <div class="carousel-caption">
+              <h2 class="animated slideInDown" style= "animation-delay: 1s">We are <span> Al Safe</span> </h2>
+              <h3 class="animated fadeInUp" style= "animation-delay: 2s">Digital Security Company</h3>
+              <p class="animated zoomIn" style= "animation-delay: 3s"><a href="#">Contact us</a> </p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="banner" style= "background-image: url(static/2.jpg);"></div>
+            <div class="carousel-caption">
+              <h2 class="animated slideInDown" style= "animation-delay: 1s">We are <span> Creative</span> </h2>
+              <h3 class="animated fadeInUp" style= "animation-delay: 2s">Digital Security Company</h3>
+              <p class="animated zoomIn" style= "animation-delay: 3s"><a href="#">Contact us</a> </p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="banner" style= "background-image: url(static/3.jpg);"></div>
+            <div class="carousel-caption">
+              <h2 class="animated slideInDown" style= "animation-delay: 1s">We are <span> Diligent</span> </h2>
+              <h3 class="animated fadeInUp" style= "animation-delay: 2s">Digital Security Company</h3>
+              <p class="animated zoomIn" style= "animation-delay: 3s"><a href="#">Contact us</a> </p>
+            </div>
+          </div>
+        </div>
+
+          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </header>
+
+    </body>
+    </html> -->

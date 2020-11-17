@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Al Safe OTP</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'main.css') }}">
+</head>
+<body>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+
+    <h2 class="active">OTP Verification </h2>
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="{{ url_for('static', filename = 'user.png') }}" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- generate Form -->
+    <form action="/generateotp" method="POST">
+      <div class="">
+          <input type="text" id="mobile" class="fadeIn second" name="mobile" placeholder="Mobile no {+919********0}" pattern="([+]?\d{1,2}[.\s]?)?\d{10}" required>
+      </div>
+
+      <input type="radio" class="fadeIn third" name="channel" value="whatsapp" checked> Whatsapp "join belt-separate" to +1 4155238886
+      <div class="">
+        <input type="submit" class="fadeIn fourth" value="Generate OTP">
+      </div>
+
+
+    </form>
+
+  </div>
+</div>
+</body>
+</html>

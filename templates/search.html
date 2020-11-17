@@ -1,0 +1,58 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'welcome.css')}}">
+</head>
+<body>
+  <header>
+  <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ url_for('welcome') }}">Al Safe</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <!-- <li><a href="{{ url_for('welcome') }}">Home </a> </li>
+          <form class="" action="/signout" method="post">
+          <li><a href="{{ url_for('index') }}">Sign Out</a></li>
+          </form>
+          <li><a href="{{ url_for('search') }}"></a></li> -->
+          <form id="signoutform" method="post" action="/signout"></form>
+          <li><a onclick="document.getElementById('signoutform').submit();">Sign Out</a></li>
+        </ul>
+      </div>
+      <form method= "POST" action = "/search">
+        <div class="navbar">
+        <div class="col-lg-6">
+        <div class="input-group">
+          <input type="text" name="uid" class="form-control" placeholder="Search by alsafeid...">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">Go!</button>
+          </span>
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+    </form>
+    </div><!-- /.container-fluid -->
+  </nav>
+  </header>
+
+    <div class="main">
+	     <h1 class="name"> {{userId}}</h1><hr style="width: 30%">
+	      <h3 class="email">{{name}}</h3>
+	       <h3 class = "user"> {{email}}</h3>
+				 <p class= "secpo"> Security Portfolio: {{whatsapp}} {{gmail}} {{facebook}} {{twitter}} </p>
+				 <img src="data:image/jpg;base64,{{img_base64s}}" alt="img_data"  id="imgslot"/> </img>
+       </div>
+</body>
+</html>
