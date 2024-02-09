@@ -12,10 +12,10 @@ Below are the Screenshots of application's beta prototype at link (https://alsaf
 ![](images/otp.jpg)
 ![](images/validate.jpg)
 ![](images/snap.jpg)
-![](images/snapupload.jpg)
-![](images/snapsubmit.jpg)
+
+
 ![](images/welcome.jpg)
 ![](images/login.jpg)
-![](images/dp.jpg)
+
 ![](images/search.jpg)
 
