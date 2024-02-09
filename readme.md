@@ -14,7 +14,7 @@ Below are the Screenshots of application's beta prototype at link (https://alsaf
 ![](images/snap.jpg)
 
 
-![](images/welcome.jpg)
+
 ![](images/login.jpg)
 
 ![](images/search.jpg)
